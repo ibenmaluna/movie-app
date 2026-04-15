@@ -1,40 +1,29 @@
 "use strict";
-console.log("Klik-tæller starter...");
 
-const countDisplay = document.querySelector("#counter");
-const clickButton = document.querySelector("#click-button");
-const resetButton = document.querySelector("#reset-button");
+console.log("Movie App starter...");
 
-console.log(countDisplay);
-console.log(clickButton);
-console.log(resetButton);
+const movies = ["Inception", "The Matrix", "Interstellar", "The Dark Knight", "Pulp Fiction", "Fight Club"];
 
-let count = 0;
+console.log("Alle film:", movies);
 
-clickButton.addEventListener("click", function () {
-  count = count + 1;
-  countDisplay.textContent = count;
+console.log("Første film:", movies[0]);
+console.log("Anden film:", movies[1]);
+console.log("Sidste film:", movies[3]);
 
+for (const movie of movies) {
+    console.log("Nu viser vi:", movie);
+}
 
-  if (count > 10) {
-    countDisplay.style.color = "lightgreen";
-  }
+console.log("Antal film:", movies.length);
 
-   if (count === 11) {
-    alert("Tillykke! Du nåede mit lykketal");
-  }
-});
+for (const movie of movies) {
+  const html = /* html */ `
+    <article class="movie-card">
+      <div class="movie-info">
+        <h3>${movie}</h3>
+      </div>
+    </article>
+  `;
 
-resetButton.addEventListener("click", function () {
-  count = 0;
-  countDisplay.textContent = count;
-});
-
-
-const minusButton = document.querySelector("#minus-btn");
-
-minusButton.addEventListener("click", function () {
-  count = count - 1;
-  countDisplay.textContent = count;
-});
-
+  console.log(html);
+}
